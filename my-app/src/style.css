@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+* {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    background: linear-gradient(0deg, rgba(20,2,57,1) 0%, rgba(45,7,69,1) 100%);
+    background-repeat: no-repeat;
+}
+
+.App-header {
+    width: 95vw;
+    height: 104px;
+    background-color: #3B2762;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 0 0 13px 13px;
+    display: flex;
+    align-items:  center;
+    justify-content: flex-end;
+  }
+
+  .Logo{
+    height: 95px;
+    margin-right: 10px;
+    
+  }
+
+  .Buttons{
+    background: linear-gradient(90deg, rgba(231,54,126,1) 0%, rgba(234,103,46,1) 100%);
+    height: 42px;
+    width: 148px;
+    border-radius: 9px;
+    border: none;
+    margin-right: 15px;
+    color:white;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .Menu-breakfast{
+    display: inline-block;
+    vertical-align: top;
+    width: 47%;
+    height: 800px;
+    margin: 1.5% 2.5%;
+    
+  }
+
+  .card-menu{
+    width: 150px;
+    height: 200px;
+    margin-top: 50px;
+    display: inline-block;
+    margin-right: 30px;
+    vertical-align: top;
+    text-align: center;
+  }
+
+  .pruebacard{
+    width: 146px;
+    height: 190px;
+    border-radius: 8px;
+  }
+
+  p{
+    color: white;
+  }
+
+  .Comanda{
+    display: inline-block;
+    width: 48%;
+    height: 30%;
+    vertical-align: top;
+  }
+
+  .Background-c{
+    width: 530px;
+    height: 700px;
+    background-color: #EBEAEA;
+    opacity: .8;
+    border-radius: 8px;
+    margin: auto;
+  }
+
+  .dropbtn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+  }
+
+  .Logote{
+    width: 415px;
+    height: 432px;
+  }
+
+  .Botones-div{
+    margin: 1.5% 2.5%;
+    width: 47%;
+  }
+
+  .orden-comanda{
+    margin: 15px;
+    display: inline;
+  }
