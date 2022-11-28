@@ -1,21 +1,34 @@
 import '../style.css';
+import NumberDishes from './Number-dishes';
+
 
 function Comanda() {
     return (
         <div className="Comanda">
             <div class="dropdown">
-                <button class="dropbtn">Mesa</button>
-            <div/>
-            <div className="Background-c">
-                <h3>ORDEN</h3>
-                <div className='orden-comanda'>
-                    <p>Chilaquiles</p>
-                    <p>$80</p>
-                </div>
+                <p>Mesa</p>
+                
+                <div class="dropdown-content" placeholder='Selecciona Mesa'>
+                    <ul>
+                        <li>1</li>
+                        <li>2</li>
+                        <li>3</li>
+                    </ul>
+                </div>                  
             </div>
+            <div className="orden-comanda">
+                <h3 id='orden'>ORDEN</h3>
+                <div> 
+                    <NumberDishes />  
+                    <NumberDishes />
+                    <NumberDishes />
+                    <NumberDishes />     
+                </div>                 
             </div>
         </div>
     );
 }
 
 export default Comanda;
+
+//<button class="dropbtn"></button>

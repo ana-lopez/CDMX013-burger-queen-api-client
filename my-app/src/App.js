@@ -1,7 +1,6 @@
 import './style.css';
 import Inicio from './views/Inicio'
 
-
 function App() {
   return (
     <Inicio />

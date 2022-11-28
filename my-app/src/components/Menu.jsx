@@ -4,10 +4,10 @@ import Card from './Card-menu';
 import React, { useState, useEffect } from 'react';
 
 function Menu() {
-    const array = [1,2,3,4,5]
-    const prueba = array.map((number) => 
-    <p>{number}</p>
-    );
+    // const array = [1,2,3,4,5]
+    // const prueba = array.map((number) => 
+    // <p>{number}</p>
+    // );
 
     const [productsState, setProductsSate]= useState({
         isloading:false,
@@ -26,11 +26,13 @@ function Menu() {
 
     },[setProductsSate])
 
-
+//{lis.length < 1 &&  no hay productos disponibles}
     
     return (
         <>
         <div className="Menu-breakfast">
+
+            
         
             {productsState.isloading && (<div>Espera mientras llegan los productos</div>)}
             {productsState.error &&(<div> Por el momento no puedo mostrar los productos algo salio mal =(</div>)}
