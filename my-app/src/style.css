@@ -97,24 +97,10 @@ body{
     color: black;
     font-size: 19px;
   }
-/*
-  .dropbtn {
-    background-color: #04AA6D;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-    margin-left: 23%
-  }*/ 
 
-.dropdown{
-   display: flex;
-   flex-direction: row;
-}
   .Botones-div{
     margin: 1.5% 2.5%;
     width: 43%;
-  
   }
 
   input{
@@ -135,16 +121,47 @@ body{
     opacity: 1;
  }
 
- .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f1f1f1;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
+  h3{
+    margin-bottom: 20px;
   }
 
   .counter-container{
     display: flex;
+    justify-content: space-between;
+    margin-bottom: 9px;
+  }
 
+
+  .counter{
+    display: flex;
+    margin: 0 20px;
+  }
+
+  .counter-dish{
+    width: 2vw;
+    background: rgba(255, 255, 255, .9);
+    border-radius: 3px;
+    text-align: center;
+  }
+
+  .select-table{
+    margin-left: 20%;
+    margin-bottom: 20px;
+  }
+
+  .label-table{
+    color:white;
+    font-size: 1.2em;
+    margin-right: 8px;
+  }
+
+  .table-number{
+    width: auto;
+    height: 35px;
+    font-size: 1.2em;
+    font-family: Montserrat;
+    text-align: center;
+    background: rgba(255, 255, 255, .7);
+    border-radius: 3px;
+    color: #E7367C;
   }

@@ -9,7 +9,6 @@ function NumberDishes(){
         
         const increase = () => {
                 setUnit(unit => unit +1);
-            
         }
     
         const decrease = () => {
@@ -22,9 +21,11 @@ function NumberDishes(){
         <div className='counter-container'>
             <p>Chilaquiles</p>
             <p>$80</p>
-            <FontAwesomeIcon icon={faCircleMinus} onClick={decrease} size="lg" />
-            <div className='number-selectedfood'>{unit}</div>
-            <FontAwesomeIcon icon={faCirclePlus} onClick={increase} size="lg" />
+            <div className='counter'>
+                <FontAwesomeIcon icon={faCircleMinus} onClick={decrease} size="lg" />
+                <div className='counter-dish'>{unit}</div>
+                <FontAwesomeIcon icon={faCirclePlus} onClick={increase} size="lg" />
+            </div>
             <FontAwesomeIcon icon={faTrashCan} size="lg"/>
         </div>
     );

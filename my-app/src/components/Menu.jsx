@@ -9,37 +9,52 @@ function Menu() {
     // <p>{number}</p>
     // );
 
-    const [productsState, setProductsSate]= useState({
+    const [productsState, setProducts]= useState({
         isloading:false,
         error:null,
-        list: []
+        list: [],
+        filteredList: []
     })
 
     useEffect(()=>{
-        setProductsSate({isloading: true, list:[], error: null})
+        setProducts({isloading: true, list:[], error: null})
         getProducts()
         .then(response =>  {
-
-            setProductsSate({isloading: false, list:response.data, error: null})
+            const allProducts = response.data;
+            const breakfast = allProducts.filter((product) => product.type === 'breakfast');
+        
+            setProducts({isloading: false, list:response.data, error: null, filteredList: breakfast})
         })
-        .catch(error =>  setProductsSate({isloading: false, list:[], error: error.message}))
+        .catch(error =>  setProducts({isloading: false, list:[], error: error.message}))
 
-    },[setProductsSate])
+    },[setProducts])
 
-//{lis.length < 1 &&  no hay productos disponibles}
+    const handleProductTypeClick = (productType) => {
+        setProducts((prevState) => {
+            // filtrar
+            const newFilterList = prevState.list.filter((product) => product.type === productType);
+            return {
+                ...prevState,
+                filteredList: newFilterList
+            }
+        })
+    }
+
     
     return (
         <>
+        <div className='Botones-div'>
+            <button className='Buttons' onClick={() => handleProductTypeClick('breakfast')}>Desayuno</button>
+            <button className='Buttons' onClick={() => handleProductTypeClick('meal')}>Comida</button>
+        </div>
         <div className="Menu-breakfast">
 
-            
-        
             {productsState.isloading && (<div>Espera mientras llegan los productos</div>)}
             {productsState.error &&(<div> Por el momento no puedo mostrar los productos algo salio mal =(</div>)}
             {!productsState.isloading && !productsState.error && (
                   
             <ul>
-                {productsState.list.map(p => (<Card imgSrc={p.image} imgAtl={p.name} name={p.name} />))}
+                {productsState.filteredList.map(p => (<Card imgSrc={p.image} imgAtl={p.name} name={p.name} />))}
             </ul> 
               
             )}
