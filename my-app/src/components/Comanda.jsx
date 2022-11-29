@@ -3,6 +3,7 @@ import NumberDishes from './Number-dishes';
 
 
 function Comanda() {
+    
     return (
         <div className="Comanda">
             <div className='select-table'>
@@ -23,6 +24,10 @@ function Comanda() {
                     <NumberDishes />
                     <NumberDishes />
                     <NumberDishes />     
+                </div>
+                <div className='buttons-order'>
+                    <button className='btn-pink'>Enviar</button>
+                    <button className='btn-orange'>Cancelar</button>
                 </div>                 
             </div>
         </div>
