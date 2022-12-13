@@ -1,9 +1,9 @@
 import '../style.css';
-import NumberDishes from './Number-dishes';
+import AddToOrder from './AddtoOrder';
 
 
-function Comanda() {
-    
+
+function Comanda({products, addProduct, deleteItem}) {
     return (
         <div className="Comanda">
             <div className='select-table'>
@@ -20,20 +20,19 @@ function Comanda() {
             <div className="orden-comanda">
                 <h3 id='orden'>ORDEN</h3>
                 <div> 
-                    <NumberDishes />  
-                    <NumberDishes />
-                    <NumberDishes />
-                    <NumberDishes />     
-                </div>
-                <div className='buttons-order'>
-                    <button className='btn-pink'>Enviar</button>
-                    <button className='btn-orange'>Cancelar</button>
-                </div>                 
+                    {
+                        products.map( product => (<AddToOrder product={product} addProduct={addProduct} deleteItem={deleteItem}/>))
+                    }    
+                    <div className='buttons-order'>
+                <button className='btn-pink'>Enviar</button>
+                <button className='btn-orange'>Cancelar</button>
+            </div> 
+                </div>  
+                             
             </div>
+            
         </div>
     );
 }
 
 export default Comanda;
-
-//<button class="dropbtn"></button>
