@@ -47,7 +47,6 @@ function Menu() {
         })
     }
 
-
     const addProduct = (p) => {
         const orderItem = productsOrder.find((product) => {
             return product.item.id === p.id
@@ -55,31 +54,47 @@ function Menu() {
 
         console.log(orderItem)
         if (orderItem) {
-
             // orderItem.qty = orderItem.qty + 1
             // orderItem.qty += 1
             orderItem.qty++
             orderItem.subtotal += p.price;
+            let total = orderItem.qty * p.price
+            console.log(total)
             // setProductsOrder(productsOrder.map( product => product.id === p.id ? ))
             setProductsOrder([...productsOrder])
             return
-            // si product existe  // significa que ya lo tengo y que debo sumar uno a la cantidad
+        } 
 
-            // si no // significa que es nuevo 
-        }
-        setProductsOrder([...productsOrder, { item: p, qty: 1, subtotal: p.price }])
+        setProductsOrder([...productsOrder, { item: p, qty: 1, subtotal: p.price}])
+        console.log()
     }
+
     const deleteItem = (p) => {
         const orderItem = productsOrder.find((product) => {
             return product.item.id === p.id
         })
+
         if (orderItem) {
             orderItem.qty--
             //orderItem.subtotal = orderItem.subtotal - p.price
             orderItem.subtotal -= p.price;
-            setProductsOrder([...productsOrder])
-            return
-        }
+            if (orderItem.qty <= 0){
+                setProductsOrder(productsOrder.filter())
+            }else{
+                setProductsOrder([...productsOrder])
+            }
+        } 
+    }
+    const eraseAllItems = (p) => {
+        const
+    }
+
+    const handleSumTotal = () => {
+        let sumTotal = 0
+        productsOrder.map((element) => {
+            sumTotal =+ productsOrder.subtotal
+        })
+        return sumTotal
     }
 
     return (
@@ -88,30 +103,21 @@ function Menu() {
             por tipo de alimento y selectedType a cambiar el color del menu seleccionado*/}
 
             <div className="Menu-breakfast">
-                {productsState.isloading && (<div>Espera mientras llegan los productos</div>)}
+                {productsState.isloading && (<div className='is-loading'>Espera mientras llegan los productos</div>)}
                 {productsState.error && (<div> Por el momento no puedo mostrar los productos algo salio mal =(</div>)}
                 {!productsState.isloading && !productsState.error && (
 
                     <ul>
-                        {productsState.filteredList.map(p => (<Card imgSrc={p.image} handleClick={() => addProduct(p)} imgAlt={p.name} name={p.name} />))}
+                        {productsState.filteredList.map(p => (<Card key={p.id} imgSrc={p.image} handleClick={() => addProduct(p)} imgAlt={p.name} name={p.name} />))}
                     </ul>
 
                 )}
 
             </div>
-            <Comanda products={productsOrder} addProduct={addProduct} deleteItem={deleteItem} />
+            <Comanda order={productsOrder} addProduct={addProduct} deleteItem={deleteItem} />
         </>
 
     );
 }
 
 export default Menu;
-
-/* <div className='Botones-div'>
-                <button className='Buttons' onClick={() => handleProductTypeClick('breakfast')} >Desayuno</button>
-                <button className='Buttons' onClick={() => handleProductTypeClick('meal')}>Comida</button>
-            </div> */
-
-            // Crear una variable con el array u objeto de los productos.
-            // Leer la propiedad de id o name para identificar el producto
-            // Comparar si propiedad

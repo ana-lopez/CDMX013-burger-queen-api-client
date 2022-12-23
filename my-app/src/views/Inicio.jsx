@@ -10,7 +10,6 @@ function Inicio (){
     return(
         <>
             <Header />
-           
             <Menu />
             
         </>

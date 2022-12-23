@@ -13,7 +13,7 @@ body{
 }
 
 .App-header {
-    width: 95vw;
+    width: 95%;
     height: 104px;
     background-color: #3B2762;
     margin-left: auto;
@@ -75,7 +75,7 @@ body{
   .Comanda{
     display: inline-block;
     width: 48%;
-    height: 30%;
+    height: 70%;
     vertical-align: top;
   }
 
@@ -154,7 +154,7 @@ body{
     margin-right: 8px;
   }
 
-  .table-number{
+  .form-select{
     width: auto;
     height: 35px;
     font-size: 1.2em;
@@ -168,7 +168,7 @@ body{
   .buttons-order{
     display: flex;
     justify-content: space-between;
-    
+    margin-top: 100px;
   }
 
   .btn-orange{
@@ -199,3 +199,25 @@ body{
   .product-name {
     width: 220px;
   }
+  .is-loading p {
+    color: white;
+  }
+
+  .item-price{
+    width: 80px;
+  }
+
+
+
+
+  @media screen and (min-width: 768px){
+    .Menu-breakfast{
+      display: inline-block;
+      vertical-align: top;
+      width: 40%;
+      height: auto;
+      margin: 1.5% 2.5%;
+      
+    }
+
+}
